@@ -13,9 +13,9 @@
     </field>
     <field
             name="joomla_article"
-            type="listarticles"
+            type="article"
+            addfieldprefix="Joomla\Component\Content\Administrator\Field\Modal"
             label="PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_JOOMLA_ARTICLE"
             published="1"
-            addfieldpath="plugins/jshopping/wt_jshopping_content_to_com_content/fields"
     />
 </form>

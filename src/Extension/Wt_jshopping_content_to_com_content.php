@@ -19,7 +19,7 @@ use Joomla\Event\SubscriberInterface;
 
 class Wt_jshopping_content_to_com_content extends CMSPlugin implements SubscriberInterface
 {
-	protected $autoloadlanguage = true;
+    protected $autoloadlanguage = true;
 
     protected $allowLegacyListeners = false;
 
@@ -37,41 +37,42 @@ class Wt_jshopping_content_to_com_content extends CMSPlugin implements Subscribe
         ];
     }
 
-	/**
-	 * @param $event Event Before display content view event
+    /**
+     * @param $event Event Before display content view event
      *
      * @return void
      *
-	 * @since 1.0.0
-	 */
-	public function onBeforeDisplayContentView($event): void
-	{
+     * @since 1.0.0
+     */
+    public function onBeforeDisplayContentView($event): void
+    {
         /* @var $view object Content View */
         $view = $event->getArgument(0);
 
-		if (count((array)$this->params->get('fields')) > 0 ) {
-			$joomla_articles = [];
+        if (count((array)$this->params->get('fields')) > 0 ) {
+            $joomla_articles = [];
 
             foreach ($this->params->get('fields') as $field) {
-				$joomla_articles[$field->text_type][$field->language] = $field->joomla_article;
-			}
+                $joomla_articles[$field->text_type][$field->language] = $field->joomla_article;
+            }
 
-			$lang_tag = $this->getApplication()->getLanguage()->getTag();
+            $lang_tag = $this->getApplication()->getLanguage()->getTag();
 
-			$page = $this->getApplication()->getInput()->get('page');
-			$article_id = (($joomla_articles[$page][$lang_tag]) ? $joomla_articles[$page][$lang_tag] : $joomla_articles[$page]['*']);
+            $page = $this->getApplication()->getInput()->get('page');
+            $article_id = (($joomla_articles[$page][$lang_tag]) ? $joomla_articles[$page][$lang_tag] : $joomla_articles[$page]['*']);
 
             if ($article_id) {
                 /* @var $component \Joomla\CMS\Extension\MVCComponent */
                 $component = $this->getApplication()->bootComponent('com_content');
 
-                /* @var $model \Joomla\Component\Content\Site\MOdel\ArticleModel */
-                $model = $component->getMVCFactory()->createModel('Article', 'ContentModel');
+                /* @var $model \Joomla\Component\Content\Site\Model\ArticleModel */
+                $model = $component->getMVCFactory()->createModel('Article');
+
                 /* @var $article object */
                 $article = $model->getItem($article_id);
 
                 $view->text = '<h1>'.$article->title.'</h1>'.(($article->fulltext) ? $article->fulltext : $article->introtext);
-			}
-		}
-	}
+            }
+        }
+    }
 }
