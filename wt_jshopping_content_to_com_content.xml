@@ -26,7 +26,10 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-				<field addfieldprefix="Joomla\Plugin\Jshopping\Wt_jshopping_content_to_com_content\Fields" type="plugininfo" name="plugininfo"></field>
+				<field name="plugininfo"
+					   type="plugininfo"
+					   addfieldprefix="Joomla\Plugin\Jshopping\Wt_jshopping_content_to_com_content\Fields"
+				/>
 				<field name="fields"
 					   label="PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_TEXT"
 					   type="subform"

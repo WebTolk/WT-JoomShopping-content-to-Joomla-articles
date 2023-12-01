@@ -59,7 +59,8 @@ class Wt_jshopping_content_to_com_content extends CMSPlugin implements Subscribe
             $lang_tag = $this->getApplication()->getLanguage()->getTag();
 
             $page = $this->getApplication()->getInput()->get('page');
-            $article_id = (($joomla_articles[$page][$lang_tag]) ? $joomla_articles[$page][$lang_tag] : $joomla_articles[$page]['*']);
+
+            $article_id = isset($joomla_articles[$page][$lang_tag]) ? $joomla_articles[$page][$lang_tag] : $joomla_articles[$page]['*'];
 
             if ($article_id) {
                 /* @var $component \Joomla\CMS\Extension\MVCComponent */

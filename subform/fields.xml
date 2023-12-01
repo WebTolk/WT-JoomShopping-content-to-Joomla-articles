@@ -16,6 +16,5 @@
             type="article"
             addfieldprefix="Joomla\Component\Content\Administrator\Field\Modal"
             label="PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_JOOMLA_ARTICLE"
-            published="1"
     />
 </form>
