@@ -1,31 +1,32 @@
-<?xml version="1.0"?>
-<extension type="plugin" version="4.0" method="upgrade" group="jshopping">
-    <name>Jshopping - WT JoomShopping Content to Joomla articles</name>
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" method="upgrade" group="jshopping">
+    <name>PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT</name>
     <author>Sergey Tolkachyov</author>
-    <authorEmail>info@web-tolk.ru</authorEmail>
-    <authorUrl>https://web-tolk.ru/</authorUrl>
-	<creationDate>08/07/2022</creationDate>
-    <copyright>Sergey Tolkachyov</copyright>
-    <license>GNU GPL 3.0</license>
-    <version>1.0.0</version>
+	<creationDate>December 2023</creationDate>
+    <copyright>(c) 2023 Sergey Tolkachyov</copyright>
+    <license>GNU General Public License version 3 or later</license>
+	<authorEmail>info@web-tolk.ru</authorEmail>
+	<authorUrl>https://web-tolk.ru/</authorUrl>
+    <version>2.0.0</version>
     <description>PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_DESC</description>
 	<scriptfile>script.php</scriptfile>
+	<namespace path="src">Joomla\Plugin\Jshopping\Wt_jshopping_content_to_com_content</namespace>
     <files>
-        <filename plugin="wt_jshopping_content_to_com_content">wt_jshopping_content_to_com_content.php</filename>
-		<folder>fields</folder>
+		<folder plugin="wt_jshopping_content_to_com_content">src</folder>
+		<folder>services</folder>
 		<folder>language</folder>
 		<folder>subform</folder>
     </files>
 	<languages folder="language" client="administrator">
-		<language tag="en-GB">en-GB/en-GB.plg_jshopping_wt_jshopping_content_to_com_content.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.plg_jshopping_wt_jshopping_content_to_com_content.ini</language>
-		<language tag="en-GB">en-GB/en-GB.plg_jshopping_wt_jshopping_content_to_com_content.sys.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.plg_jshopping_wt_jshopping_content_to_com_content.sys.ini</language>
+		<language tag="en-GB">en-GB/plg_jshopping_wt_jshopping_content_to_com_content.ini</language>
+		<language tag="ru-RU">ru-RU/plg_jshopping_wt_jshopping_content_to_com_content.ini</language>
+		<language tag="en-GB">en-GB/plg_jshopping_wt_jshopping_content_to_com_content.sys.ini</language>
+		<language tag="ru-RU">ru-RU/plg_jshopping_wt_jshopping_content_to_com_content.sys.ini</language>
 	</languages>
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field addfieldpath="plugins/jshopping/wt_jshopping_content_to_com_content/fields" type="plugininfo" name="plugininfo"/>
+				<field addfieldprefix="Joomla\Plugin\Jshopping\Wt_jshopping_content_to_com_content\Fields" type="plugininfo" name="plugininfo"></field>
 				<field name="fields"
 					   label="PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_TEXT"
 					   type="subform"
@@ -34,7 +35,6 @@
 					   multiple="true"
 					   buttons="add,remove"
 				/>
-
             </fieldset>
         </fields>
     </config>
