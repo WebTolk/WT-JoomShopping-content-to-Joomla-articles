@@ -34,7 +34,7 @@
 					   label="PLG_WT_JSHOPPING_CONTENT_TO_COM_CONTENT_TEXT"
 					   type="subform"
 					   layout="joomla.form.field.subform.repeatable"
-					   formsource="plugins/jshopping/wt_jshopping_content_to_com_content/subform/fields.xml"
+					   formsource="plugins/jshopping/wt_jshopping_content_to_com_content/src/Subform/fields.xml"
 					   multiple="true"
 					   buttons="add,remove"
 				/>
