@@ -41,4 +41,8 @@
             </fieldset>
         </fields>
     </config>
+	<updateservers>
+      		<server type="extension" priority="1" name="WebTolk - WT JoomShopping content to Joomla articles updates">https://web-tolk.ru/component/swjprojects/jupdate?element=wt_jshopping_content_to_com_content</server>
+	</updateservers>
+	<changelogurl>https://web-tolk.ru/jchangelog?element=wt_jshopping_content_to_com_content</changelogurl>
 </extension>
