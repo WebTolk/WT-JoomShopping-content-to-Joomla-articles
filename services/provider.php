@@ -18,7 +18,7 @@ use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
 use Joomla\Plugin\Jshopping\Wt_jshopping_content_to_com_content\Extension\Wt_jshopping_content_to_com_content;
 
-return new class implements ServiceProviderInterface {
+return new class () implements ServiceProviderInterface {
 
     public function register(Container $container): void
     {
